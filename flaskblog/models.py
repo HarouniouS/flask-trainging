@@ -36,3 +36,11 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+class VideoModel(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    views = db.Column(db.Integer, nullable=False)
+    likes = db.Column(db.Integer, nullable=False)
+    def __repr__(self):
+        return f"Video(name ={name}, views={views}, likes={likes})"
